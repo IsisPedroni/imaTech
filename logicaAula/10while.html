@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+//variavel p/ somar valores
+        var soma = 0;
+
+// continuar no loop
+
+        var continuar = true;
+
+    // laço de repetição
+        while (continuar) {
+
+            var numero = parseInt(prompt("Informe um numero ou 0 para sair: "))
+
+            if(numero == 0){
+                continuar = false;
+            }else{
+                soma += numero;
+            }
+
+        }
+
+         document.write("Soma dos valores: ", soma)
+  
+
+   
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

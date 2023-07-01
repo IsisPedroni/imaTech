@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        //VETOR
+
+        var nomes = [];
+
+        //laço de repetição
+
+        do{
+            var obterNome = prompt("Informe um nome ou SAIR para finalizar")
+
+            //condicional
+            if(obterNome != "sair")
+                nomes.push(obterNome);
+
+        }while(obterNome !== "sair");
+
+
+        document.write(nomes);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
