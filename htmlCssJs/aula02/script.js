@@ -3,7 +3,7 @@ function calcular(){
     let moeda = document.getElementById('moeda');
     let res = document.getElementById('res');
 
-    let dolar = 5.25;
+    let dolar = 4.79;
     
    
     if(valor == 0 || moeda.value == [0] ){
@@ -13,12 +13,12 @@ function calcular(){
 
 
         valorEmDolar = Number(valor / dolar);
-        res.innerHTML = `Valor em Dólar: R$${valorEmDolar.toFixed(2)}`
+        res.innerHTML = `Valor em Dolar: US$${valorEmDolar.toFixed(2)}`
 
     }else{
     
         let valorEmReal = Number(valor * dolar);
-        res.innerHTML = `Valor em Real: US$${valorEmReal.toFixed(2)}`
+        res.innerHTML = `Valor em Real: R$${valorEmReal.toFixed(2)}`
     }
 
 }
