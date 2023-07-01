@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+
+body{
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    margin: 50px auto;
+}
+
+
+form{
+    width: 600px;
+    margin: 30px auto;
+}
+
+input, select{
+    margin-bottom: 10px;
+}

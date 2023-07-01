@@ -1,0 +1,21 @@
+form{
+    background-color: aqua;
+    padding: 15px;
+    width: 500px;
+    /* centraliza */
+    margin: 50px auto;
+    border: 1px solid #aac50d;
+    border-radius: 10px;
+    text-align: center;
+}
+
+input[type="text"], input[type="number"]{
+    width: 500px;
+    height: 30px;
+    margin-bottom: 10px;
+}
+
+input[type="button"]{
+    width: 200px;
+    height: 40px;
+}

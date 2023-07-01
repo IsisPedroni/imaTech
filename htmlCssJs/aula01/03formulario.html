@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="formulario.css">
+
+<script>
+
+    function mensagem() {
+        var nome = document.getElementById("nome").value;
+        var idade = document.getElementById("idade").value;
+
+        alert(nome + " tem " + idade + " anos")
+    }
+
+</script>
+
+</head>
+<body>
+
+    <form> 
+        <input type="text" id="nome" placeholder="Informe um nome">
+        <input type="number" id="idade" placeholder="Informe sua idade">
+        <input type="button" value="Enviar" onclick="mensagem()">
+    </form>
+    
+</body>
+</html>
