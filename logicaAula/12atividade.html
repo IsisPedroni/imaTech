@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        var menu = "1) Ana \n";
+            menu += "2) Bianca \n";
+            menu += "3) Carla \n";
+            menu += "4) Finalizar";
+
+        var ana = 0, bianca = 0, carla = 0;
+
+        do{
+            var voto = parseInt(prompt(menu));
+
+            switch(voto){
+                case 1:
+                    ana++;
+                    break;
+
+                case 2:
+                    bianca++;
+                    break;
+                
+                case 3:
+                    carla++;
+                    break;
+
+                case 4: 
+                    alert('Votação finalizada');
+                    break;
+
+                default:
+                    alert('Opção invalida')
+            }
+        }while(voto != 4);
+
+        document.write('Ana obteve ' + ana + ' votos');
+        document.write("<br>")
+        document.write('Bianca obteve ' + bianca + ' votos');
+        document.write("<br>")
+        document.write('Carla obteve ' + carla + ' votos');
+   
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>
