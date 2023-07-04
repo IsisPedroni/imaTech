@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Tabela</title>
+</head>
+<body>
+    
+        <nav >
+            <a href="link.html" target="_blank">Exemplo de Link</a>
+            <a href="listas.html" target="_blank">Exemplo de Lista</a>
+            <a href="tabela.html" target="_blank">Exemplo de tabela</a>
+        </nav>
+
+
+    <!-- Exemplo 01 -->
+    <!-- TR LINHA -->
+    <!-- TD COLUNA -->
+
+    <table class="table">
+        <tr>
+            <td>Ana</td>
+            <td>Bianca</td>
+            <td>Julia</td>
+    </tr>
+
+        <tr>
+            <td>Carla</td>
+            <td>Suelen</td>
+            <td>Ísis</td>
+        </tr>
+    </table>
+
+    <!-- Exemplo 02 -->
+
+    <table class="table">
+        <tr>
+            <td rowspan="2" style="background: yellow;">1</td>
+            <td colspan="2" style="background: red;" >2</td>
+            <!-- <td>3</td> -->
+        </tr>
+        <tr>
+            <!-- <td>4</td> -->
+            <td>5</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+        </tr>
+    </table>
+
+
+    <!-- Exemplo 03 -->
+    <table class="table table-dark">
+        <!-- Cabeçalho -->
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Cidade</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Ísis</td>
+                <td>Novo Hamburgo</td>
+            </tr>
+            <tr>
+                <td>Suelen</td>
+                <td>Curitiba</td>
+            </tr>
+        </tbody>
+
+        <!-- Rodapé -->
+        <tfoot>
+            <tr>
+                <td colspan="2">Foram encontrados 2 registros</td>
+            </tr>
+
+        </tfoot>
+    </table>
+
+</body>
+</html>
