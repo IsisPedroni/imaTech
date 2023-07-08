@@ -1,5 +1,4 @@
 //Vetor
-
 let vetor = [];
 
 // Cadastrar
@@ -8,16 +7,17 @@ function cadastrar() {
     var nome = document.getElementById('nome');
     var idade = document.getElementById('idade');
 
-    // alert( `Meu nome é ${nome.value} e tenho ${idade.value} anos`)
-   
+    if(nome.value == '' || isNaN(parseInt(idade.value))){
+        alert('Preencha todos os dados corretamente.');
+    }else{
+
     //Criar JSON (objeto)
     var pessoa = {
         'nome': nome.value,
         'idade': parseInt(idade.value)
     }
 
-    // Cadastrar ob JSON no vetor
-
+    // Cadastrar objeto JSON no vetor
     vetor.push(pessoa);
 
     console.log(vetor);
@@ -31,7 +31,7 @@ function cadastrar() {
 
     //Atualizar TABELA
     listar();
-
+    }
 
 }
 
@@ -57,7 +57,13 @@ function cadastrar() {
             // Informaçoes das colunas
             colunaNome.innerHTML = vetor[i].nome;
             colunaIdade.innerHTML = vetor[i].idade;
-
             
         }
+    }
+
+    //Apagando lista
+    function apagar(){
+        vetor = [];
+        tabela.innerHTML = "";
+
     }
