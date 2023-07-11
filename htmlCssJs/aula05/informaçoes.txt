@@ -1,0 +1,14 @@
+API: Aplication Programming Interface
+
+CONCEITO: É um sistema que pode realizar requisições.
+
+Requisições:
+    POST:   Cadastra
+    GET:    Seleção
+    PUT:    Alterações
+    DELETE: Remoção 
+
+    Padrão de dados (envio e recebimento): JSON
+
+    JSON EX:
+    let pessoa = {'nome':'isis', 'idade':23}
