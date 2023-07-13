@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<script>
+
+// Requisição via fetch - não assíncrono
+//   for(var i=1; i<152; i++){
+//     fetch('https://pokeapi.co/api/v2/pokemon/' +i)
+//     .then(retorno => retorno.json())
+//     .then(pokemon => console.log(pokemon.name))
+//   }
+
+
+// funçao assicrona
+
+    async function obterPokemons(){
+
+        var exibir = document.getElementById('exibir')
+
+        for(var i=1; i<152; i++){
+
+            var requisicao = await fetch('https://pokeapi.co/api/v2/pokemon/' +i);
+            var pokemon = await requisicao.json();
+            exibir.innerHTML += '<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/'+ i +'.png">'
+            exibir.innerHTML += '<p>'+pokemon.name+'</p>';
+
+        }
+    }
+
+    
+  
+
+</script>
+
+</head>
+<body onload="obterPokemons()" >
+
+<div id="exibir"></div>
+
+    
+</body>
+</html>
