@@ -1,3 +1,5 @@
+// essa nao daria pra reutilizar
+
 void somar(int n1, int n2){
   print(n1 + n2);
 }
