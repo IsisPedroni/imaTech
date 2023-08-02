@@ -1,31 +1,32 @@
-// Poli -> Vários
+// Poli    -> Vários
 // Morphus -> Formas
-
 class DescontoPadrao {
-  // vale Transporte
+  // Vale Transporte
   void valeTransporte(double salario) {
-    print('Desconto do VT Padrão: ${salario * 0.6}');
+    print("Desconto do VT Padrão: ${salario * 0.06}");
   }
 
-  // importo de renda
-  void importoRenda(double salario) {
-    print('Desconto IR padrão: ${salario * 0.5}');
+  // Imposto de renda
+  void impostoRenda(double salario) {
+    print("Desconto IR Padrão: ${salario * 0.05}");
   }
 }
 
 class Analista extends DescontoPadrao {
   @override
   void impostoRenda(double salario) {
-    print('Desconto IR Analista: ${salario * 0.8}');
+    print("Desconto IR Analista: ${salario * 0.08}");
   }
 }
 
 void main() {
+  // Primeiro objeto
   DescontoPadrao obj1 = new DescontoPadrao();
-  obj1.valeTransporte(100);
-  obj1.importoRenda(100);
+  obj1.valeTransporte(1000);
+  obj1.impostoRenda(1000);
 
+  // Segundo objeto
   Analista obj2 = new Analista();
-  obj2.valeTransporte(200);
-  obj2.importoRenda(200);
+  obj2.valeTransporte(1000);
+  obj2.impostoRenda(1000);
 }
