@@ -1,13 +1,18 @@
+import 'package:exercicio/Exercicio01.dart';
 import 'package:flutter/material.dart';
 
 
-class Pagina extends StatefulWidget {
-  @override
-  State<StatefulWidget> createState() {
-    return ConteudoPagina();
-  }
+void main() {
+  runApp(const MyApp());
 }
 
-class ConteudoPagina {
-  return Text('Olá', textDirection: TextDirection.ltr,)
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      theme: ThemeData.light(),
+      home:const Exercicio01(),
+    );
+  }
 }
