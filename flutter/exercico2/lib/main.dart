@@ -1,110 +1,112 @@
+// Importar pacote Material
 import 'package:flutter/material.dart';
 
+// Inicialização
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
+// StatelessWidget
 class MyApp extends StatelessWidget {
+  // Construtor
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: CadastroPessoa(),
+    return MaterialApp(
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(
+            seedColor: const Color.fromARGB(255, 248, 1, 84)),
+      ),
+      home: const Pagina(),
     );
   }
 }
 
-class CadastroPessoa extends StatefulWidget {
-  const CadastroPessoa({super.key});
+// StatefulWidget
+class Pagina extends StatefulWidget {
+  // Construtor
+  const Pagina({super.key});
 
   @override
   State<StatefulWidget> createState() {
-    return CadastroPessoaState();
+    return ConteudoPagina();
   }
 }
 
-class CadastroPessoaState extends State<CadastroPessoa> {
-  String nome = '';
-  int idade = 0;
-  String genero = 'Masculino';
-  bool temHobby = false;
-  String informacoes = '';
+class ConteudoPagina extends State {
+  List<String> nomes = [];
+  List<String> cidades = [];
+
+  String? nome;
+  String? cidade;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Cadastro de Pessoa"),
+        title: const Text('Adicionar cidade'),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
+      body: SizedBox(
         child: Column(
           children: [
-            TextField(
-              decoration: const InputDecoration(labelText: 'Nome'),
-              onChanged: (value) {
-                setState(() {
-                  nome = value;
-                });
-              },
-            ),
-            const SizedBox(height: 10),
-            TextField(
-              keyboardType: TextInputType.number,
-              decoration: const InputDecoration(labelText: 'Idade'),
-              onChanged: (value) {
-                setState(() {
-                  idade = int.tryParse(value) ?? 0;
-                });
-              },
-            ),
-            const SizedBox(height: 10),
-            DropdownButton<String>(
-              value: genero,
-              onChanged: (value) {
-                setState(() {
-                  genero = value!;
-                });
-              },
-              items: ['Masculino', 'Feminino', 'Outro']
-                  .map<DropdownMenuItem<String>>(
-                (String value) {
-                  return DropdownMenuItem<String>(
-                    value: value,
-                    child: Text(value),
-                  );
+            Padding(
+              padding: const EdgeInsets.all(10),
+              child: TextField(
+                decoration:
+                    const InputDecoration(labelText: 'Digite seu nome:'),
+                onChanged: (value) {
+                  setState(() {
+                    nome = value;
+                  });
                 },
-              ).toList(),
+              ),
             ),
-            const SizedBox(height: 10),
-            Row(
-              children: [
-                Checkbox(
-                  value: temHobby,
-                  onChanged: (value) {
-                    setState(() {
-                      temHobby = value!;
-                    });
-                  },
-                ),
-                const Text('Possui Hobby'),
-              ],
+            Padding(
+              padding: const EdgeInsets.all(10),
+              child: TextField(
+                decoration: const InputDecoration(
+                    labelText: 'Digite o nome da sua cidade:'),
+                onChanged: (value) {
+                  setState(() {
+                    cidade = value;
+                  });
+                },
+              ),
             ),
-            const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                setState(() {
-                  String possuiHobby = temHobby ? 'Sim' : 'Não';
-                  informacoes =
-                      'Meu nome é $nome tenho $idade anos meu genero é $genero, possui hobby: $possuiHobby ';
-                });
-              },
-              child: const Text('Cadastrar'),
+            Padding(
+              padding: const EdgeInsets.all(10),
+              child: ElevatedButton(
+                onPressed: () {
+                  setState(() {
+                    nomes.add(nome!);
+                    cidades.add(cidade!);
+                  });
+                },
+                child: const Text('Cadastrar'),
+              ),
             ),
-            const SizedBox(height: 20),
-            Text(
-              informacoes,
-              textAlign: TextAlign.center,
-              style: const TextStyle(fontSize: 16),
+            SizedBox(
+              height: 300,
+              child: ListView.builder(
+                  shrinkWrap: true,
+                  scrollDirection: Axis.vertical,
+                  itemCount: nomes.length,
+                  itemBuilder: (BuildContext obj, int indice) {
+                    return Card(
+                      color: const Color.fromARGB(255, 248, 1, 84),
+                      child: Padding(
+                        padding: const EdgeInsets.all(10),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(nomes[indice]),
+                            Text(cidades[indice]),
+                          ],
+                        ),
+                      ),
+                    );
+                  }),
             ),
           ],
         ),
