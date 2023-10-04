@@ -1,0 +1,9 @@
+-Instala o prjeto Laravel completo
+composer create-project laravel/laravel NOMEDOPROJETO
+
+-Comando basico do laravel
+-Se voce rodar o php artisan no terminal ele te mostra todos os compando do php 
+php artisan 
+
+-Cria um servidor web(tela incial do lavravel)
+php artisan serve
