@@ -1,0 +1,12 @@
+--view PASTA RESOURCES
+--Rostas PASTA ROUTES web.php
+
+--Controllers PASTA APP/HTTP/Controllers
+
+
+-- Comando para criar controller 
+make:controller : Controllers CUIDA DE cadastramento de produto/exibir/Rotas/excluir. 
+
+TODO MEDOTO DE CONTROLER RETONA UMA VIEW
+
+namespace App\Http\Controllers: APONTA CAMINHO
